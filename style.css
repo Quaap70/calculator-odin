@@ -1,0 +1,73 @@
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+/* Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base styles */
+body {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* Layout */
+.container {
+    margin: 40px;
+}
+
+.btn-container {
+    display: grid;
+    width: 300px;
+    gap: 5px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Display */
+.calc-display {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 300px;
+    height: 50px;
+    margin: 8px 0;
+    padding-right: 15px;
+    font-size: 32px;
+    background-color: gainsboro;
+    border: 1px solid black;
+    border-radius: 12px;
+}
+
+/* Buttons */
+.calc-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    color: white;
+    background-color: rgb(47, 45, 45);
+    border: 1px solid black;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+/* Operator buttons */
+.btn-container .calc-btn:nth-child(-n+4),
+.btn-container .calc-btn:nth-child(8),
+.btn-container .calc-btn:nth-child(12) {
+    background-color: rgb(119, 83, 5);
+}
+
+/* Equals button */
+.calc-btn:nth-child(16) {
+    grid-row: span 2;
+    height: auto;
+    background-color: rgb(240, 162, 17);
+}
