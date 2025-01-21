@@ -13,6 +13,7 @@
 
 /* Base styles */
 body {
+    height: 100vh;
     font-family: 'Roboto Mono', monospace;
     font-size: 22px;
     font-weight: 700;
@@ -20,7 +21,10 @@ body {
 
 /* Layout */
 .container {
-    margin: 40px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn-container {
@@ -70,4 +74,47 @@ body {
     grid-row: span 2;
     height: auto;
     background-color: rgb(240, 162, 17);
+}
+
+
+/* Visual Enhancements */
+
+/* 3D effect for buttons */
+.calc-btn {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+    transition: all 0.1s ease;
+}
+
+/* Button hover effect */
+.calc-btn:hover {
+    background-color: rgb(67, 65, 65);
+    /* Iets lichter dan de basis kleur */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Button click effect */
+.calc-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Operator buttons hover */
+.btn-container .calc-btn:nth-child(-n+4):hover,
+.btn-container .calc-btn:nth-child(8):hover,
+.btn-container .calc-btn:nth-child(12):hover {
+    background-color: rgb(139, 103, 25);
+    /* Iets lichter dan de basis operator kleur */
+}
+
+/* Equals button hover */
+.calc-btn:nth-child(16):hover {
+    background-color: rgb(255, 182, 37);
+    /* Iets lichter dan de basis equals kleur */
+}
+
+/* Optional: subtle glow effect for display */
+.calc-display {
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
 }
