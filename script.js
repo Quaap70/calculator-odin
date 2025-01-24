@@ -35,7 +35,11 @@ const calculate = (a, operator, b) => {
 }
 
 const formatNumber = (value) => {
-    return Number.isInteger(value) ? value.toString() : value.toFixed(3); // Limit decimal places to prevent display overflow
+    if (Number.isInteger(value)) {
+        return value.toString();
+    }
+    // Round to 3 decimal places and remove unnecessary zeros
+    return Number(Math.round(value * 1000) / 1000).toString();
 }
 
 const validateValue = (value) => {
